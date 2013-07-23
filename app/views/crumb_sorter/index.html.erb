@@ -1,0 +1,21 @@
+<h1>choose event</h1>
+
+<% unless @album.empty? %>
+	<%= form_tag sort_crumbs_sorter_path  do %>
+	  <%= select_tag "event_id",options_for_select(@album) %>
+	  <%= submit_tag 'ok',class:"btn btn-primary" %>
+	  <span> or </span>
+	  <%= link_to "Create new event",new_story_event_path(current_story), class:"btn btn-success" %>
+	<% end %>
+<% else %>
+	<%= link_to "Create new event",new_story_event_path(current_story), class:"btn btn-success" %>
+<% end %>
+<ul class="thumbnails">
+	<% @crumbs.each do |crumb| %>
+		<li class="span1">
+			<div class="thumbnail">
+		    <%= image_tag crumb.media.url(:square) %>
+			</div>
+  		</li>
+	<% end %>
+</ul>

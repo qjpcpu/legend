@@ -1,0 +1,29 @@
+<div id="myCarousel" class="carousel slide">
+<ol class="carousel-indicators">
+<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+<li data-target="#myCarousel" data-slide-to="1"></li>
+<li data-target="#myCarousel" data-slide-to="2"></li>
+</ol>
+<!-- Carousel items -->
+<div class="carousel-inner">
+<div class="active item">
+  <%=image_tag img_url_list[0],size: "1366x1366" %> 
+  <div class="carousel-caption">  
+    <h4><%= title_list[0] %></h4>  
+    <p><%= truncate(desc_list[0],length: 80) %></p>  
+  </div> 
+</div>
+<% 1.upto(img_url_list.length-1) do |i| %>
+<div class="item">
+  <%= image_tag img_url_list[i],size: "1024x1024" %>
+  <div class="carousel-caption"> 
+  	<h4><%= title_list[i] %></h4>  
+    <p><%= truncate(desc_list[i],length: 80) %></p>
+  </div> 
+</div>
+<% end %>
+</div>
+<!-- Carousel nav -->
+<a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+<a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+</div>

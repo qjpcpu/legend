@@ -1,0 +1,25 @@
+<div id="time_line">
+</div>
+
+<p>
+  <%= paginate @events %>
+</p>
+<p>
+<%=  link_to 'Add event', upload_event_crumbs_path(current_user.tmp_event),class:"btn btn-large btn-info" %>
+</p>
+
+<script type="text/javascript">
+ $(document).ready(function() {
+  var dataObject = <%= raw @story.timeline(@events).to_json %>
+    createStoryJS({
+      type: 'timeline',
+      width: '100%',
+      height: '700',
+      source: dataObject,
+      embed_id: 'time_line',
+      lang: '/assets/application.js',
+      js: '/assets/application.js',
+      css: '/assets/application.css'
+    });
+  });
+</script>

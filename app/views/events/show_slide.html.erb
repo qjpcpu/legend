@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span2">
+      <h4><%=@event.caption%></h4>
+      <h7><%=@event.description%></h7>
+
+
+    </div>
+    <div class="span10">
+      <div id='gallery'>
+		<% @event.crumbs.each do |crumb| %>
+		  <%=link_to image_tag(crumb.media.url(:square)),crumb.media.url(:original)%>
+		<% end %>
+	  </div>
+    </div>
+  </div>
+</div>
+
+<%= link_to "<i class='icon-book'></i>Return to book".html_safe, story_event_path(@story,@event,mode:"book"),class:"btn btn-info" %>  
+<%= link_to 'Back', story_events_path(@story),class:"btn btn-info" %>
+	  
+<script type="text/javascript">
+	$('#gallery').photobox('a');
+			// or with a fancier selector and some settings, and a callback:
+	$('#gallery').photobox('a:first', { thumbs:true, time:0 }, imageLoaded);
+	function imageLoaded(){
+		console.log('image has been loaded...');
+	}
+</script>

@@ -1,0 +1,12 @@
+<h1>Choice a book</h1>
+<ul class="thumbnails">
+  <% @stories.each do |story| %>
+  <li class="span4">
+    <div class="thumbnail">
+      <%= link_to image_tag(story.cover.url(:middle)),story_events_path(story) %>
+      <h3><%= story.title %></h3>
+      <p>T<%= story.instruction %></p>
+    </div>
+  </li>
+  <% end %>
+</ul>

@@ -1,0 +1,31 @@
+<!-- not use this view -->
+<p id="notice"><%= notice %></p>
+<h1><%=@event.caption%></h1>
+<p><%=@event.description%></p>
+<%= link_to "<i class='icon-book'></i> Slides".html_safe, story_event_path(@story,@event,mode:"slide"),class:"act" %> 
+<%= link_to "<i class='icon-trash'></i> Destroy".html_safe, story_event_path(@story,@event),:confirm => "Are you sure?",method:"delete",class:"act" %>
+
+<div class="empty">
+	<div class="photowall">
+	    	<% @event.crumbs.each do |crumb| %>
+	    	<div class="pw-slide">
+	    		<%= image_tag(crumb.media.url(:middle),class:"pw-image")%>
+		        <div class="pw-image-desc">
+		            <h1 class="crumb_<%=crumb.id%>"><%= crumb.caption %></h1>
+					<p class="crumb_<%=crumb.id%>"><%= crumb.description %></p>
+					<p><%= link_to_modal "<i class='icon-pencil'></i>Edit".html_safe,edit_event_crumb_path(@event,crumb)%></p>
+					<div>
+		        	  <!-- nothing now! -->
+		        	</div>
+		        </div>
+	    	</div>
+	        <% end %>
+	</div>
+</div>
+<br/>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+	  $(".photowall").photoWall();
+	});
+</script>
