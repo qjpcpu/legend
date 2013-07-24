@@ -46,7 +46,7 @@ class StoriesController < ApplicationController
 
   def update
     @story=current_user.stories.find params[:id]
-    if @story.update_attributes(params[:story])
+    if @story.update(story_params)
         redirect_to @story, notice: 'story was successfully updated.'
       else
         render action: "edit"
