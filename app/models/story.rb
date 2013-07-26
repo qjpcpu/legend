@@ -1,6 +1,5 @@
 class Story < ActiveRecord::Base
-  #attr_accessible :cover, :end_date, :instruction, :start_date, :title
-
+  
   has_attached_file :cover,
   :styles=>{:middle=>"400x400>",:small=>"32x32",:square=>"200x300#"}, 
   :convert_options=>{

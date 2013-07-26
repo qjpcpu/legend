@@ -4,7 +4,6 @@ class Event < ActiveRecord::Base
   belongs_to :cover, :class_name=>'Crumb',:foreign_key => "crumb_id"
   has_many :crumbs,:dependent=>:destroy, :after_add=>:crumb_added
 
-  #attr_accessible :caption, :description, :duration, :start_date,:available
   validates :caption,:start_date,:duration,:presence=>true
   validates_numericality_of :duration, greater_than: 0
 
@@ -31,7 +30,7 @@ class Event < ActiveRecord::Base
   	era=date.select{|k| ["startDate","endDate","tag"].include? k}
   	{"date"=>date,"era"=>era}
   end
-  
+
   def self.empty_event
     c=Crumb.new(caption:"",description:"")
     c.media.instance_eval do

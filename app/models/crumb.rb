@@ -1,5 +1,4 @@
 class Crumb < ActiveRecord::Base
-  #attr_accessible :caption, :description, :media
   has_attached_file :media,
   :styles=>{:middle=>"500x500>",:small=>"32x32",:square=>"200x200#",:book=>"300x163#"}, 
   :convert_options=>{

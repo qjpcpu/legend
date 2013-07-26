@@ -5,10 +5,6 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  # Setup accessible (or protected) attributes for your model
-  #attr_accessible :email, :password, :password_confirmation, :remember_me,:nickname
-  
-
   has_many :events
   has_one :profile,:dependent=>:destroy
   has_many :stories_info,class_name:"StoryInfo",foreign_key:"user_id"
