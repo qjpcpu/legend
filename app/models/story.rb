@@ -22,15 +22,11 @@ class Story < ActiveRecord::Base
   def timeline(events)
     date_list=[]
     era_list=[]
+    events<<Event.empty_event if events.size==0
     events.each do |e|
       tl=e.to_timeline
       date_list<<tl["date"]
       era_list<<tl["era"]
-    end
-    if date_list.empty?
-      e=Event.empty_event_timeline
-      date_list<<e["date"]
-      era_list<<e["era"]
     end
     
     {

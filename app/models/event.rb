@@ -18,9 +18,9 @@ class Event < ActiveRecord::Base
   	date={
   		"startDate"=>start_date.to_s.gsub(/-/,','),
   		"endDate"=>(start_date+duration).to_s.gsub(/-/,','),
-  		"headline"=>"<a href='"+story_event_path(self.story,self)+"'>"+caption+"</a>",
+  		"headline"=>"<a href='"+(id.nil? ? '#' : story_event_path(self.story,self))+"'>"+caption+"</a>",
   		"text"=>description,
-  		"tag"=>"sweet"<<(id%3).to_s,
+  		"tag"=>"sweet"<<(id.nil? ? '0' : (id%3).to_s),
   		"asset"=>{
   			"media"=>cover.media.url(:middle),
   			"thumbnail"=>cover.media.url(:small),
@@ -31,22 +31,21 @@ class Event < ActiveRecord::Base
   	era=date.select{|k| ["startDate","endDate","tag"].include? k}
   	{"date"=>date,"era"=>era}
   end
-  def self.empty_event_timeline
-    date={
-      "startDate"=>"2005,5,22",
-      "endDate"=>"2005,5,23",
-      "headline"=>"No more events",
-      "text"=>"",
-      "tag"=>"sweet0",
-      "asset"=>{
-        "media"=>"/assets/no_events.jpg",
-        "thumbnail"=>"/assets/no_events.jpg",
-        "credit"=>"",
-        "caption"=>""
-       }
-      }
-      era=date.select{|k| ["startDate","endDate","tag"].include? k}
-      {"date"=>date,"era"=>era}
+  
+  def self.empty_event
+    c=Crumb.new(caption:"",description:"")
+    c.media.instance_eval do
+      def url(style)
+        "/assets/no_events.jpg"
+      end
+    end
+    Event.new(start_date:Date.today,
+      duration:1,
+      caption:"No more events",
+      description:"",
+      available:false,
+      cover:c
+      )
   end
 
   def crumb_added(crumb)
