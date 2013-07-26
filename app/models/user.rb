@@ -6,7 +6,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :events
-  has_one :profile,:dependent=>:destroy
   has_many :stories_info,class_name:"StoryInfo",foreign_key:"user_id"
   has_many :stories,:through=>:stories_info
 
