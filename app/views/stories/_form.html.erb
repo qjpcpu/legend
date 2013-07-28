@@ -2,7 +2,7 @@
 
   <% if @story.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@story.errors.count, "error") %> prohibited this profile from being saved:</h2>
+      <h2><%= pluralize(@story.errors.count, "error") %> <%=t('.prohibite_save_story')%></h2>
 
       <ul>
       <% @story.errors.full_messages.each do |msg| %>
@@ -23,8 +23,8 @@
       <div class="fileupload fileupload-new" data-provides="fileupload">
         <div class="fileupload-preview thumbnail" style="width: 200px; height: 150px;"></div>
         <div>
-          <span class="btn btn-file"><span class="fileupload-new">Select image</span><span class="fileupload-exists">Change</span><%= f.file_field :cover %></span>
-          <a href="#" class="btn fileupload-exists" data-dismiss="fileupload">Remove</a>
+          <span class="btn btn-file"><span class="fileupload-new"><%=t('.select_image')%></span><span class="fileupload-exists"><%=t('.change')%></span><%= f.file_field :cover %></span>
+          <a href="#" class="btn fileupload-exists" data-dismiss="fileupload"><%=t('.remove')%></a>
         </div>
       </div>
     </div>

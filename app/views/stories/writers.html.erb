@@ -1,6 +1,6 @@
-<h1>Set honey here</h1>
+<h1><%=t('.set_honey_here')%></h1>
 <%= form_tag writers_story_path(@story)  do %>
-    <%= label_tag "honey" %>
+    <%= label_tag t(".honey") %>
 	<%= text_field_tag :writer_id %>
-	<%= submit_tag 'ok',class:"btn btn-primary" %>
+	<%= submit_tag t('.ok'),class:"btn btn-primary" %>
 <% end %>

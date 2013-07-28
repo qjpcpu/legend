@@ -1,0 +1,59 @@
+# Additional translations at https://github.com/plataformatec/devise/wiki/I18n
+
+zh-CN:
+  devise:
+    confirmations:
+      confirmed: "您的帐户已激活，并成功登入恋恋笔记本！"
+      send_instructions: "稍后您将收到一封邮件来确认激活您的帐户。"
+      send_paranoid_instructions: "如果您的邮件地址已记录到恋恋笔记本，稍后您将收到一封邮件来确认激活您的帐户。"
+    failure:
+      already_authenticated: "您已经登入了恋恋笔记本。"
+      inactive: "您的帐户尚未激活。"
+      invalid: "邮件地址或密码错误。"
+      invalid_token: "Invalid authentication token."
+      locked: "您的帐户已冻结。"
+      not_found_in_database: "邮件地址或密码错误。"
+      timeout: "会话过期，请重新登陆。"
+      unauthenticated: "请先登录或注册。"
+      unconfirmed: "帐户未激活，请先激活帐户。"
+    mailer:
+      confirmation_instructions:
+        subject: "激活指导"
+      reset_password_instructions:
+        subject: "重置密码向导"
+      unlock_instructions:
+        subject: "解锁帐户向导"
+    omniauth_callbacks:
+      failure: "由于\"%{reason}\"，无法从%{kind}获得验证"
+      success: "通过%{kind}的帐户验证."
+    passwords:
+      no_token: "如果您不是从密码重置邮件来到这里的，您将无法访问该页面。"
+      send_instructions: "稍后您将收到一封邮件引导您修改密码。"
+      send_paranoid_instructions: "稍后您将收到一封邮件引导您恢复密码。"
+      updated: "修改密码成功！登入..."
+      updated_not_active: "修改密码成功！"
+    registrations:
+      destroyed: "您的帐户已注销，再见！"
+      signed_up: "注册成功，欢迎您！"
+      signed_up_but_inactive: "注册成功，但您的帐户未激活，请激活帐户后登入。"
+      signed_up_but_locked: "注册成功，但您的帐户已冻结，请解锁帐户后登入。"
+      signed_up_but_unconfirmed: "请查看邮箱，按照提示激活帐户。"
+      update_needs_confirmation: "更新帐户成功，请查看邮件确认该操作。"
+      updated: "成功更新帐户。"
+    sessions:
+      signed_in: "登陆成功。"
+      signed_out: "退出登陆。"
+    unlocks:
+      send_instructions: "稍后您将收到一封邮件引导您解锁帐户。"
+      send_paranoid_instructions: "如果您的邮件地址已记录到恋恋笔记本，稍后您将收到一封邮件来解锁您的帐户。"
+      unlocked: "解锁帐户成功，请登陆。"
+  errors:
+    messages:
+      already_confirmed: "已经确认成功，请登陆。"
+      confirmation_period_expired: "需要经过%{period}确认，请再试一次"
+      expired: "过期，请再试一次"
+      not_found: "无法找到"
+      not_locked: "没有锁定"
+      not_saved:
+        one: "唷，发生错误，无法保存%{resource}："
+        other: "发生%{count}个错误，无法保存%{resource}:"

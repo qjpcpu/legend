@@ -17,8 +17,8 @@
   </div>
 </div>
 
-<%= link_to "<i class='icon-book'></i>Return to book".html_safe, story_event_path(@story,@event,mode:"book"),class:"btn btn-info" %>  
-<%= link_to 'Back', story_events_path(@story),class:"btn btn-info" %>
+<%= link_to "<i class='icon-book'></i>".html_safe<<t('.return_2_book'), story_event_path(@story,@event,mode:"book"),class:"btn btn-info" %>  
+<%= link_to t('.back'), story_events_path(@story),class:"btn btn-info" %>
 	  
 <script type="text/javascript">
 	$('#gallery').photobox('a');

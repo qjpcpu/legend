@@ -4,15 +4,15 @@
      <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#"><%=current_user.nickname||=current_user.email%> <b class="caret"></b></a>
         <ul class="dropdown-menu" id="swatch-menu">
-            <li><%=  link_to 'Create a story', new_story_path %></li>
+            <li><%=  link_to t('.create_a_story'), new_story_path %></li>
             <li class="divider"></li>
-            <li><%=  link_to 'Account settings', edit_user_registration_path  %></li>
+            <li><%=  link_to t('.account_settings'), edit_user_registration_path  %></li>
         </ul>
       </li>
-      <li><%=  link_to 'Logout', destroy_user_session_path, method:"delete" %></li>
+      <li><%=  link_to t('.logout'), destroy_user_session_path, method:"delete" %></li>
   <% else %>
-      <li><%=  link_to_modal 'Login', new_user_session_path %></li>
-      <li><%=  link_to_modal 'Logup', new_user_registration_path %></li>
+      <li><%=  link_to_modal t('.login'), new_user_session_path %></li>
+      <li><%=  link_to_modal t('.logup'), new_user_registration_path %></li>
   <% end %>
 
   

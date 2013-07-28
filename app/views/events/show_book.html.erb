@@ -1,15 +1,15 @@
 <h1><%=@event.caption%></h1>
 <p><%=@event.description%></p>
 
-<%= link_to_modal "<i class='icon-pencil'></i>Edit".html_safe,edit_story_event_path(@story,@event),class:"btn btn-info"%>
-<%= link_to "<i class='icon-trash'></i> Destroy this book".html_safe, story_event_path(@story,@event),:confirm => "Are you sure?",method:"delete",class:"btn btn-danger" %>
-<%= link_to "<i class='icon-book'></i> Slides".html_safe, story_event_path(@story,@event,mode:"slide"),class:"btn btn-primary" %> 
-<%= link_to 'Back', story_events_path(@story),class:"btn btn-info" %>
+<%= link_to_modal "<i class='icon-pencil'></i>".html_safe<<t('.edit'),edit_story_event_path(@story,@event),class:"btn btn-info"%>
+<%= link_to "<i class='icon-trash'></i> ".html_safe<<t('.destroy_book'), story_event_path(@story,@event),:confirm => t('.r_u_sure'),method:"delete",class:"btn btn-danger" %>
+<%= link_to "<i class='icon-book'></i> ".html_safe<<t('.slides'), story_event_path(@story,@event,mode:"slide"),class:"btn btn-primary" %> 
+<%= link_to t('.back'), story_events_path(@story),class:"btn btn-info" %>
 
 <div class="book_wrapper">
 			<a id="next_page_button"></a>
 			<a id="prev_page_button"></a>
-			<div id="loading" class="loading">Loading pages...</div>
+			<div id="loading" class="loading"><%=t('.loading_pages')%></div>
 			<div id="mybook" style="display:none;">
 				<div class="b-load">
 					<% @event.crumbs.each do |crumb| %>
@@ -17,8 +17,8 @@
 							<%= image_tag(crumb.media.url(:book))%>
 							<h1 class="crumb_<%=crumb.id%>"><%= crumb.caption %></h1>
 							<p class="book_text crumb_<%=crumb.id%>"><%= crumb.description %></p>
-							<%= link_to_modal "<i class='icon-pencil'></i>edit".html_safe,edit_event_crumb_path(@event,crumb),class:"article"%>
-							<%= link_to "<i class='icon-trash'></i> delete".html_safe,event_crumb_path(@event,crumb),:method=>"delete",:confirm=>"Are your sure?",class:"demo" %> 
+							<%= link_to_modal "<i class='icon-pencil'></i>".html_safe<<t('.edit'),edit_event_crumb_path(@event,crumb),class:"article"%>
+							<%= link_to "<i class='icon-trash'></i> ".html_safe<<t('.delete'),event_crumb_path(@event,crumb),:method=>"delete",:confirm=>t('.r_u_sure'),class:"demo" %> 
 						</div>
 					<% end %>
 				</div>

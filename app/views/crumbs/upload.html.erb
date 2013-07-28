@@ -1,5 +1,5 @@
 <div class="container">
-  <h2>Upload love shot</h2>
+  <h2><%=t('.upload_love_shot')%></h2>
   <%= form_for [@event,Crumb.new],url: upload_event_crumbs_path, :html => { :multipart => true, :id => "fileupload"  } do |f| %>
     <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
     <div class="row fileupload-buttonbar">
@@ -7,20 +7,20 @@
         <!-- The fileinput-button span is used to style the file input field as button -->
         <span class="btn btn-success fileinput-button">
           <i class="icon-plus icon-white"></i>
-          <span>Add shots...</span>
+          <span><%=t('.add_shots')%></span>
           <%= f.file_field :media %>
         </span>
         <button type="submit" class="btn btn-primary start">
           <i class="icon-upload icon-white"></i>
-          <span>Start upload</span>
+          <span><%=t('.start_upload')%></span>
         </button>
         <button type="reset" class="btn btn-warning cancel">
           <i class="icon-ban-circle icon-white"></i>
-          <span>Cancel upload</span>
+          <span><%=t('.cancel_upload')%></span>
         </button>
         <button type="button" class="btn btn-danger delete">
           <i class="icon-trash icon-white"></i>
-          <span>Delete</span>
+          <span><%=t('.delete')%></span>
         </button>
         <input type="checkbox" class="toggle">
       </div>
@@ -32,7 +32,7 @@
       </div>
     </div>
     <p>
-        <%=link_to_modal "Complete upload",crumbs_sorter_path,class:'btn btn-info' %>
+        <%=link_to_modal t('.complete_upload'),crumbs_sorter_path,class:'btn btn-info' %>
       </p>
     <!-- The loading indicator is shown during image processing -->
     <div class="fileupload-loading"></div>

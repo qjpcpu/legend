@@ -5,7 +5,7 @@
   <%= paginate @events %>
 </p>
 <p>
-<%=  link_to 'Add event', upload_event_crumbs_path(current_user.tmp_event),class:"btn btn-large btn-info" %>
+<%=  link_to t('.add_event'), upload_event_crumbs_path(current_user.tmp_event),class:"btn btn-large btn-info" %>
 </p>
 
 <script type="text/javascript">

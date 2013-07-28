@@ -1,0 +1,109 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+zh-CN:
+  layouts:
+    application:
+      legend: "恋恋笔记本"
+    navigation:
+      login: "登录"
+      logup: "注册"
+      logout: "退出"
+      account_settings: "个人信息"
+      create_a_story: '新的故事'
+
+  crumb_sorter:
+    empty:
+      no_upload: "至少上传一张照片哦，亲"
+    index:
+      ok: "确定"
+      or: "或者"
+      create_new_event: "新建爱的点滴"
+      choose_event: "上传到已记录的点滴"
+
+  crumbs:
+    form:
+      prohibite_save_crumb: "唷，出错了亲："
+      update_detail: "更新详情"
+      caption: "标题"
+      description: "描述"
+      update: "更新"
+    upload:
+      upload_love_shot: "上传你们甜蜜的回忆"
+      add_shots: "添加照片..."
+      start_upload: "开始上传"
+      cancel_upload: "取消上传"
+      delete: "移除"
+      complete_upload: "完成上传"
+
+  events:
+    form:
+      prohibite_save_event: "唷，出错了亲："
+      start_date: "日期"
+      duration: "几天？"
+      caption: "标题"
+      description: "写点什么吧"
+    edit:
+      edit_event: "编辑"
+    index:
+      add_event: '新建爱的点滴'
+    new:
+      new_event: "新建爱的点滴"
+      back: "后退"
+    show_book:
+      edit: "编辑"
+      destroy_book: "删除这本笔记"
+      slides: "幻灯片"
+      r_u_sure: "确定删除?"
+      back: "后退"
+      loading_pages: "加载回忆..."
+      delete: "移除"
+    show_slide:
+      back: "后退"
+      return_2_book: "返回笔记本"
+
+  stories:
+    form:
+      prohibite_save_story: "唷，出错了亲："
+      title: "标题"
+      select_image: "选择封面"
+      change: "更换封面"
+      remove: "移除封面"
+      instruction: "本书介绍"
+    edit:
+      edit_cover: "编辑封面"
+    index:
+      choice_book: "选择一个笔记本"
+    new:
+      create_our_story: "创建我们的故事"
+    show:
+      writers_list: "故事的作者"
+      edit: "编辑"
+      open_book: "打开恋恋笔记本"
+    writers:
+      set_honey_here: "您的另一半是？"
+      honey: "Honey"
+      ok: "确定"
+
+  welcome:
+    index:
+     two_is_better_than_one: "Two is better than one"
+     go_read_love_story: "阅读我们的恋恋笔记本"

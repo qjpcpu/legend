@@ -1,9 +1,9 @@
 <div class="center hero-unit">
-  <h1>Two is better than one</h1>
+  <h1><%=t('.two_is_better_than_one')%></h1>
 
   <% img_lst,title_lst,des_lst=carousel_content %>
   <%= render "carousel",:img_url_list=>img_lst,:title_list=>title_lst,:desc_list=>des_lst %>
   
   <br/>
-  <%= link_to "Go Read Our Love Story",stories_path,class:"btn btn-large btn-primary"%>
+  <%= link_to t('.go_read_love_story'),stories_path,class:"btn btn-large btn-primary"%>
 </div>

@@ -1,14 +1,14 @@
-<h1>choose event</h1>
+<h1><%=t('.choose_event')%></h1>
 
 <% unless @album.empty? %>
 	<%= form_tag sort_crumbs_sorter_path  do %>
 	  <%= select_tag "event_id",options_for_select(@album) %>
-	  <%= submit_tag 'ok',class:"btn btn-primary" %>
-	  <span> or </span>
-	  <%= link_to "Create new event",new_story_event_path(current_story), class:"btn btn-success" %>
+	  <%= submit_tag t('.ok'),class:"btn btn-primary" %>
+	  <span> <%=t('.or')%> </span>
+	  <%= link_to t('.create_new_event'),new_story_event_path(current_story), class:"btn btn-success" %>
 	<% end %>
 <% else %>
-	<%= link_to "Create new event",new_story_event_path(current_story), class:"btn btn-success" %>
+	<%= link_to t('.create_new_event'),new_story_event_path(current_story), class:"btn btn-success" %>
 <% end %>
 <ul class="thumbnails">
 	<% @crumbs.each do |crumb| %>

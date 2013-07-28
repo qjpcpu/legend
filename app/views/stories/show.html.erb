@@ -10,12 +10,12 @@
 	      	  <h5>Written by <%=@story.users.first.display_name%> and <%=@story.users.second.display_name%></h5>
 	      	  <% end %>
 	      <h5><%= @story.instruction %></h5>
-	      <%= link_to_modal 'writers of this book',writers_story_path(@story) %>
+	      <%= link_to_modal t('.writers_list'),writers_story_path(@story) %>
 	    </div>
 	  </div>
 	</div>
 </div>
 
-<%= link_to 'Edit', edit_story_path %> |
-<%= link_to 'story book', story_events_path(@story) %>
+<%= link_to t('.edit'), edit_story_path %> |
+<%= link_to t('.open_book'), story_events_path(@story) %>
 

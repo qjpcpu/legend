@@ -20,4 +20,90 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  layouts:
+    application:
+      legend: "Legend"
+    navigation:
+      login: "Login"
+      logup: "Logup"
+      logout: "Logout"
+      account_settings: "Account settings"
+      create_a_story: 'Create a story'
+
+  crumb_sorter:
+    empty:
+      no_upload: "Please upload one love shot at least"
+    index:
+      ok: "Ok"
+      or: "Or"
+      create_new_event: "Create new event"
+      choose_event: "choose event"
+
+  crumbs:
+    form:
+      prohibite_save_crumb: "prohibited this crumb from being saved:"
+      update_detail: "update detail"
+      caption: "Caption"
+      description: "Description"
+      update: "Update"
+    upload:
+      upload_love_shot: "Upload love shot"
+      add_shots: "Add shots..."
+      start_upload: "Start upload"
+      cancel_upload: "Cancel upload"
+      delete: "Delete"
+      complete_upload: "Complete upload"
+
+  events:
+    form:
+      prohibite_save_event: "prohibited this event from being saved:"
+      start_date: "Start date"
+      duration: "Duration"
+      caption: "Caption"
+      description: "Description"
+    edit:
+      edit_event: "Editing event"
+    index:
+      add_event: 'Add event'
+    new:
+      new_event: "New event"
+      back: "Back"
+    show_book:
+      edit: "Edit"
+      destroy_book: "Destroy this book"
+      slides: "Slides"
+      r_u_sure: "Are you sure?"
+      back: "Back"
+      loading_pages: "Loading pages..."
+      delete: "delete"
+    show_slide:
+      back: "Back"
+      return_2_book: "Return to book"
+
+  stories:
+    form:
+      prohibite_save_story: "prohibited this story from being saved:"
+      title: "Title"
+      select_image: "Select image"
+      change: "Change"
+      remove: "Remove"
+      instruction: "Instruction"
+    edit:
+      edit_cover: "Edit story cover"
+    index:
+      choice_book: "Choice a book"
+    new:
+      create_our_story: "Create our story"
+    show:
+      writers_list: "writers of this book"
+      edit: "Edit"
+      open_book: "Open the book"
+    writers:
+      set_honey_here: "Set your honey here"
+      honey: "Honey"
+      ok: "Ok"
+
+  welcome:
+    index:
+     two_is_better_than_one: "Two is better than one"
+     go_read_love_story: "Go Read Our Love Story"

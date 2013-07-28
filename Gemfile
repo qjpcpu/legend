@@ -46,6 +46,8 @@ gem 'devise'
 
 gem 'kaminari'
 
+gem 'rails-i18n'
+
 group :test, :development do 
 	gem 'rspec-rails'
 end
