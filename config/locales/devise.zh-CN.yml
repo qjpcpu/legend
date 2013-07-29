@@ -6,6 +6,8 @@ zh-CN:
       confirmed: "您的帐户已激活，并成功登入恋恋笔记本！"
       send_instructions: "稍后您将收到一封邮件来确认激活您的帐户。"
       send_paranoid_instructions: "如果您的邮件地址已记录到恋恋笔记本，稍后您将收到一封邮件来确认激活您的帐户。"
+      new:
+        resend_confirm_instruction: "重新发送确认邮件"
     failure:
       already_authenticated: "您已经登入了恋恋笔记本。"
       inactive: "您的帐户尚未激活。"
@@ -19,10 +21,22 @@ zh-CN:
     mailer:
       confirmation_instructions:
         subject: "激活指导"
+        welcome: "欢迎您，"
+        confirm_account_with_link: "点击下面到链接激活账户:"
+        confirm_account: "激活账户"
       reset_password_instructions:
         subject: "重置密码向导"
+        hello: "您好"
+        change_pwd_with_link: "点击下面的链接来修改密码"
+        change_pwd: "修改密码"
+        ignore_this: "如果不是您本人希望修改，请忽略该邮件。"
+        change_pwd_on_click: "点击上面的链接后才能修改密码。"
       unlock_instructions:
         subject: "解锁帐户向导"
+        hello: "您好，"
+        account_locked: "登录失败次数超限，账户被冻结"
+        unlock_on_click: "点击下面的链接解锁账户:"
+        unlock_account: "解锁账户"
     omniauth_callbacks:
       failure: "由于\"%{reason}\"，无法从%{kind}获得验证"
       success: "通过%{kind}的帐户验证."
@@ -32,6 +46,14 @@ zh-CN:
       send_paranoid_instructions: "稍后您将收到一封邮件引导您恢复密码。"
       updated: "修改密码成功！登入..."
       updated_not_active: "修改密码成功！"
+      edit:
+        change_ur_pwd: "修改密码"
+        new_password: "新密码"
+        confirm_new_pwd: "新密码确认"
+        change_pwd: "修改密码"
+      new:
+        forgot_pwd: "忘记密码?"
+        send_me_reset_pwd_instruction: "给我发送重置密码向导"
     registrations:
       destroyed: "您的帐户已注销，再见！"
       signed_up: "注册成功，欢迎您！"
@@ -40,13 +62,44 @@ zh-CN:
       signed_up_but_unconfirmed: "请查看邮箱，按照提示激活帐户。"
       update_needs_confirmation: "更新帐户成功，请查看邮件确认该操作。"
       updated: "成功更新帐户。"
+      edit:
+        edit: "编辑"
+        password: "密码"
+        wait_confirm: "需要验证邮箱:"
+        leave_pwd_blank: "(如果不想更改密码则不填写)"
+        password_confirmation: "密码确认"
+        current_password: "当前密码"
+        need_current_pwd: "(输入当前密码)"
+        update: "更新"
+        cancel_account: "注销账户"
+        back: "后退"
+        r_u_sure: "确定注销账户?"
+      new:
+        sign_up: "注册"
+        password: "密码"
+        password_confirmation: "密码确认"
     sessions:
       signed_in: "登陆成功。"
       signed_out: "退出登陆。"
+      new:
+        sign_in: "登录"
+        password: "密码"
+        remember_me: "记住我"
+    shared:
+      links:
+        sign_in: "登录"
+        sign_up: "注册"
+        forgot_pwd: "忘记密码?"
+        not_receive_confirm: "没有收到确认向导?"
+        not_receive_unlock: "没有收到解锁向导?"
+        sign_in_with: "登录为:"
     unlocks:
       send_instructions: "稍后您将收到一封邮件引导您解锁帐户。"
       send_paranoid_instructions: "如果您的邮件地址已记录到恋恋笔记本，稍后您将收到一封邮件来解锁您的帐户。"
       unlocked: "解锁帐户成功，请登陆。"
+      new:
+        resend_unlock_instructions: "重发解锁向导"
+
   errors:
     messages:
       already_confirmed: "已经确认成功，请登陆。"

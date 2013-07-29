@@ -20,6 +20,28 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 zh-CN:
+  activerecord:
+    models:
+      event:       "篇章"
+      crumb:       "点滴"
+      story:       "笔记本"
+      user:        "用户"
+    attributes:
+      event:
+        caption:   "标题"
+        description:  "写点什么吧"
+        duration: "几天?"
+        start_date: "日期"
+      crumb:
+        caption:   "标题"
+        description: "描述"
+      story:
+        title:     "故事名"
+        cover:     "封面"
+        instruction: "故事简介"
+      user:
+        nickname:  "昵称"
+
   layouts:
     application:
       legend: "恋恋笔记本"
@@ -36,8 +58,8 @@ zh-CN:
     index:
       ok: "确定"
       or: "或者"
-      create_new_event: "新建爱的点滴"
-      choose_event: "上传到已记录的点滴"
+      create_new_event: "新建爱的篇章"
+      choose_event: "上传到已有的篇章"
 
   crumbs:
     form:
@@ -47,7 +69,7 @@ zh-CN:
       description: "描述"
       update: "更新"
     upload:
-      upload_love_shot: "上传你们甜蜜的回忆"
+      upload_love_shot: "上传你们甜蜜的点滴"
       add_shots: "添加照片..."
       start_upload: "开始上传"
       cancel_upload: "取消上传"
@@ -64,9 +86,9 @@ zh-CN:
     edit:
       edit_event: "编辑"
     index:
-      add_event: '新建爱的点滴'
+      add_event: '新建爱的篇章'
     new:
-      new_event: "新建爱的点滴"
+      new_event: "新建爱的篇章"
       back: "后退"
     show_book:
       edit: "编辑"
@@ -106,4 +128,4 @@ zh-CN:
   welcome:
     index:
      two_is_better_than_one: "Two is better than one"
-     go_read_love_story: "阅读我们的恋恋笔记本"
+     go_read_love_story: "我们的恋恋笔记本"
