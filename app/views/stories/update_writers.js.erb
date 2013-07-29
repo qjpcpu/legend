@@ -1,0 +1,4 @@
+$("#honey_list").html("");
+<% @users.each do |user| %>
+  $("#honey_list").append("<li><%= user.nickname||user.email %></li>");
+<%end%>

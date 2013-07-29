@@ -1,6 +1,9 @@
 <h1><%=t('.set_honey_here')%></h1>
-<%= form_tag writers_story_path(@story)  do %>
+<%= form_tag writers_story_path(@story),remote:true  do %>
     <%= label_tag t(".honey") %>
-	<%= text_field_tag :writer_id %>
+	<%= text_field_tag :writer_id,@honey.nil? ? "" : (@honey.nickname||@honey.email) %>
 	<%= submit_tag t('.ok'),class:"btn btn-primary" %>
 <% end %>
+<ul id="honey_list" >
+  <li><a href="#">Action</a></li>
+</ul>

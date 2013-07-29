@@ -61,15 +61,17 @@ class StoriesController < ApplicationController
 
   def writers
     @story=current_user.stories.find params[:id]
+    @honey=@story.users.reject{|x| x==current_user}.first
   end
 
   def update_writers
     @story=current_user.stories.find params[:id]
-    user=User.find_by_email params[:writer_id]
-    if user && !(@story.users.exists? user)
-      @story.users<<user
+    @users=User.where.not(:id=>current_user.id).
+      where("email like ? or nickname like ?","%#{params[:writer_id]}%","%#{params[:writer_id]}%").limit(10)
+    
+    respond_to do |format|
+      format.js
     end
-    redirect_to @story
   end
 
   private
