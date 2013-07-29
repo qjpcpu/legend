@@ -9,6 +9,12 @@ Legend::Application.routes.draw do
 
     devise_for :users
 
+    resources :messages do
+      member do
+        post "ignore"=>:ignore
+      end
+    end
+
     resources :stories do
       member do
         get "writers"=>:writers

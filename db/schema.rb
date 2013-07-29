@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130711141826) do
+ActiveRecord::Schema.define(version: 20130729082652) do
 
   create_table "crumbs", force: true do |t|
     t.string   "caption"
@@ -43,6 +43,20 @@ ActiveRecord::Schema.define(version: 20130711141826) do
   add_index "events", ["crumb_id"], name: "index_events_on_crumb_id"
   add_index "events", ["story_id"], name: "index_events_on_story_id"
   add_index "events", ["user_id"], name: "index_events_on_user_id"
+
+  create_table "messages", force: true do |t|
+    t.integer  "from"
+    t.integer  "to"
+    t.integer  "kind"
+    t.integer  "priority",   default: 5
+    t.text     "content"
+    t.boolean  "handled",    default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "messages", ["from"], name: "index_messages_on_from"
+  add_index "messages", ["to"], name: "index_messages_on_to"
 
   create_table "stories", force: true do |t|
     t.string   "cover_file_name"

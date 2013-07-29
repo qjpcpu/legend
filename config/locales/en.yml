@@ -29,6 +29,7 @@ en:
       logout: "Logout"
       account_settings: "Account settings"
       create_a_story: 'Create a story'
+      inbox: "Inbox"
 
   crumb_sorter:
     empty:

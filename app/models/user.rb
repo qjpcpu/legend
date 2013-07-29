@@ -8,6 +8,9 @@ class User < ActiveRecord::Base
   has_many :events
   has_many :stories_info,class_name:"StoryInfo",foreign_key:"user_id"
   has_many :stories,:through=>:stories_info
+  has_many :inbox,:class_name=>"Message",:foreign_key=>"to",:dependent=>:destroy
+  has_many :outbox,:class_name=>"Message",:foreign_key=>"from"
+
 
   def tmp_event
     tmp=self.events.where(:available=>false).first

@@ -51,6 +51,7 @@ zh-CN:
       logout: "退出"
       account_settings: "个人信息"
       create_a_story: '新的故事'
+      inbox: "消息"
 
   crumb_sorter:
     empty:
